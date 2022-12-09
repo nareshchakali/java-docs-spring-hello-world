@@ -18,7 +18,7 @@ variables:
   # environmentName: $(environmentName)
 
   # Agent VM image name
-  vmImageName: $(imageName)
+  vmImageName: $(imagename)
 
 stages:
 - stage: Build
