@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: $(Azure Resource connection azureSubscription)
+  azureSubscription: $(serviceconnection)
  
   # Web app name
   webAppName: 'spring-boot-complete-1669527546076'
