@@ -18,7 +18,7 @@ variables:
   environmentName: $(environmentName)
 
   # Agent VM image name
-  vmImageName: $(vmImageName)
+  vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
