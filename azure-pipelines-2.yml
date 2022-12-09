@@ -18,7 +18,7 @@ variables:
   environmentName: 'springboot19'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: $(vmImageName)
 
 stages:
 - stage: Build
