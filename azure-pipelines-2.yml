@@ -52,7 +52,7 @@ stages:
   jobs:
   - deployment: DeployLinuxWebApp
     displayName: Deploy Linux Web App
-    environment: 'springboot19'
+    environment: $(environment)
     pool:
       vmImage: $(vmImageName)
     strategy:
