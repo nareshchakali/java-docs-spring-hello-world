@@ -63,6 +63,6 @@ stages:
             inputs:
               azureSubscription: $(serviceconnection)
               appType: webAppLinux
-              appName: $(webAppName)
+              appName: $(appName)
               package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
 
