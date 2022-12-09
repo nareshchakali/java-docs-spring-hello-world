@@ -12,10 +12,10 @@ variables:
   azureSubscription: $(serviceconnection)
 
   # Web app name
-  webAppName: 'springboot19'
+  webAppName: $(webappName)
 
   # Environment name
-  environmentName: 'springboot19'
+  environmentName: $(environmentName)
 
   # Agent VM image name
   vmImageName: $(vmImageName)
@@ -44,3 +44,11 @@ stages:
 
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
+
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+       ConnectionType: 'AzureRM'
+       azureSubscription: $(serviceconnection)
+       appType: 'webAppLinux'
+       WebAppName: $(webappName)
+       packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
