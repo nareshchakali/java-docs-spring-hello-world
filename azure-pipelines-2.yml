@@ -60,7 +60,6 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: springboot19'
             inputs:
               azureSubscription: $(serviceconnection)
               appType: webAppLinux
