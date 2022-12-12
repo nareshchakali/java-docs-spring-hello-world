@@ -66,3 +66,25 @@ stages:
               appName: $(appName)
               package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
 
+- stage: QA
+  displayName: QA
+  dependsOn: Deploy
+  condition: succeeded()
+  jobs:
+  - deployment: DeployLinuxJavaApp
+    displayName: Deploy Linux java app
+    environment: $(environment)
+    pool:
+      vmImage: $(vmImageName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureWebApp@1
+            inputs:
+              azureSubscription: $(serviceconnection)
+              appType: webAppLinux
+              appName: $(appName)
+              slotName: QA
+              package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
+
