@@ -6,13 +6,13 @@
 trigger:
 - main
 
-variables:
+# variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: $(serviceconnection)
+  # azureSubscription: $(serviceconnection)
 
   # Web app name
-  webAppName: $(webappName)
+  # webAppName: $(webappName)
 
   # Environment name
   # environmentName: $(environmentName)
